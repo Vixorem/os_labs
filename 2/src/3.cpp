@@ -3,6 +3,7 @@
 
 int main()
 {
-    execl("/bin/ls", "", "/", NULL);  // вызываем программу ls
+    //todo
+    execl("/bin/ls", "ls", "-l", ".", NULL);  // вызываем программу ls 
     return 0;
 }
