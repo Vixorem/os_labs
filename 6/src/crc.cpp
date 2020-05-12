@@ -5,10 +5,12 @@ unsigned long diff(struct timeval t1, struct timeval t2) {
     return t2.tv_sec * 1000000 + t2.tv_usec - t1.tv_sec * 1000000 - t1.tv_usec;
 }
 
+// Переменные для замерки времени
 struct timeval tv1;
 struct timeval tv2;
 
 
+// таблица для crc алгоритма
 void crc(char *fileName, int expectedSum) {
     const unsigned short crc16Table[256] = { 
             0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280, 0xC241,
@@ -51,6 +53,7 @@ void crc(char *fileName, int expectedSum) {
 
     FILE *file = fopen(fileName, "r"); 
 
+    // считываем данные и вычисяем контрольную сумма
     while (fread(&buff, 1, 1, file) != 0) { 
         sum = (sum >> 8) ^ crc16Table[(sum & 0xFF) ^ buff];
     }
@@ -62,6 +65,7 @@ void crc(char *fileName, int expectedSum) {
 
 }
 
+// замер времени
 int main() {
     gettimeofday(&tv1, NULL);
     crc("../tests/1.txt", 15744);

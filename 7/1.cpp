@@ -6,6 +6,7 @@
 #define LOW 1
 
 void change(char* str, int countChange, int typeChange) { 
+    // случай для блоков 8 байтов
     while (countChange >= 8) { 
         if (typeChange == UPPER) 
             *((uint64_t *)str) &= 0b1101111111011111110111111101111111011111110111111101111111011111; //обнуляем бит на каждой позиции, кратной 6
@@ -14,6 +15,7 @@ void change(char* str, int countChange, int typeChange) {
         countChange -= 8; 
         str += 8;
     }
+    // для четырех
     while (countChange >= 4) { 
         if (typeChange == UPPER) 
             *((uint32_t *)str) &= 0b11011111110111111101111111011111; 
@@ -23,6 +25,7 @@ void change(char* str, int countChange, int typeChange) {
         str += 4;
     }
 
+    // для остального
     while (countChange >= 1) { 
         if (typeChange == UPPER) 
             *str &= 0b11011111; 
@@ -37,6 +40,8 @@ void readStr(char* str) {
     unsigned int len = strlen(str); 
     int countUpper = 0;
     int countLow = 0; 
+    // подчитываем кол-во больших и маленьких букв
+    // вызываем функцию смены регистра
     while (*str != '\0') { 
         if (*str >= 'a' && *str <= 'z') {
             ++countLow; 

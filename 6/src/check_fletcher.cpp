@@ -8,6 +8,7 @@ unsigned long diff(struct timeval t1, struct timeval t2) {
 struct timeval tv1;
 struct timeval tv2;
 
+// алгоритм флетчера
 void check_fletcher(char *fileName, int expectedSum) {
     unsigned int sum1 = 0; 
     unsigned int sum2 = 0;
@@ -18,6 +19,7 @@ void check_fletcher(char *fileName, int expectedSum) {
 
     FILE *file = fopen(fileName, "r"); 
 
+    // считываем и вычисляем сумму
     while (fread(&buff, 1, 1, file) != 0) { 
         sum1 = (sum1 + buff) % 255;
         sum2 = (sum2 + sum1) % 255; 

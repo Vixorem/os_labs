@@ -18,10 +18,11 @@ int main(int argc, char* argv[])
     stat_t fs;
     stat(fileName, &fs);
     int fsize = fs.st_size;
-    // printf("%d %d %d\n", fd, linesNum, fsize);
     char* buff = (char*)malloc(fsize);
     int lineCnt = 0;
     int byteCnt = 0;
+    /*идев в конец файла, и с помоюсь lseek перемещаем его ближе к началу, 
+    тем самым читаю задом наперед*/
     for (int i = 0; i < fsize; ++i) {
         lseek(fd, -i, SEEK_END);
         char c;
@@ -35,7 +36,7 @@ int main(int argc, char* argv[])
         buff[i] = c;
         ++byteCnt;
     }
-    // printf("%d\n", byteCnt);
+    // печатаем то, что сохранили
     for (int i = byteCnt - 1; i >= 0; --i) {
         printf("%c", buff[i]);
     }

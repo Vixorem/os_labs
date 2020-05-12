@@ -6,9 +6,11 @@ unsigned long diff(struct timeval t1, struct timeval t2) {
     return t2.tv_sec * 1000000 + t2.tv_usec - t1.tv_sec * 1000000 - t1.tv_usec;
 }
 
+// переменные для замерки времени
 struct timeval tv1;
 struct timeval tv2;
 
+// таблица для crc алгоритма
 const unsigned char crc8Table[256] = { 
         0x00, 0x31, 0x62, 0x53, 0xC4, 0xF5, 0xA6, 0x97,
         0xB9, 0x88, 0xDB, 0xEA, 0x7D, 0x4C, 0x1F, 0x2E,
@@ -44,6 +46,7 @@ const unsigned char crc8Table[256] = {
         0x3B, 0x0A, 0x59, 0x68, 0xFF, 0xCE, 0x9D, 0xAC
 };
 
+// здесь вычисляется сумма
 unsigned char crc8(unsigned char *buff, unsigned long bufSize)
 {
     unsigned char crc = 0xFF; 
@@ -53,6 +56,7 @@ unsigned char crc8(unsigned char *buff, unsigned long bufSize)
     return crc;
 }
 
+// здесь создается файл, куда будет записана сумма
 void create_csum(char *fileNameIn, char *fileNameOut) {
     unsigned long readSize; 
     int n = 4096; 
@@ -62,6 +66,7 @@ void create_csum(char *fileNameIn, char *fileNameOut) {
     FILE *ReadFile = fopen(fileNameIn, "r"); 
     FILE *WriteFile = fopen(fileNameOut, "w"); 
 
+    // Читаем блоками и создаем для каждого блока его сумму
     while ((readSize = fread(buff, 1, n, ReadFile)) != 0) { 
         crc = crc8(buff, readSize); 
         fprintf(WriteFile, "%c", crc); 
@@ -72,6 +77,7 @@ void create_csum(char *fileNameIn, char *fileNameOut) {
     free(buff);
 }
 
+// функция для проверки сумм
 void check_csum(char *fileNameTest, char *fileNameCsum) {
     unsigned long readSize;
     int n = 4096;
@@ -83,8 +89,10 @@ void check_csum(char *fileNameTest, char *fileNameCsum) {
 
     FILE *ReadFileCsum = fopen(fileNameCsum, "r");
 
+    // считываем по блокам, считаем сумму, сравниваем с той суммой, которая должна быть
     while ((readSize = fread(buff, 1, n, ReadFileTest)) != 0) { 
         crc = crc8(buff, readSize); 
+        // проверки, на случай несовпадения с искомой суммой
         if (fscanf(ReadFileCsum, "%c", &expectedCrc) == 0) { 
             printf("Error: sum mismatch, %s.",fileNameTest);
             return;
@@ -107,6 +115,7 @@ void check_csum(char *fileNameTest, char *fileNameCsum) {
 }
 
 int main() {
+    // Сравнение вычисленной суммы с искомой
     create_csum("../tests/3.txt", "../tests/sum1.txt");
     check_csum("../tests/3.txt", "../tests/sum1.txt");
     return 0;

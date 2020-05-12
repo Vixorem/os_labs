@@ -11,8 +11,11 @@ unsigned long diff(struct timeval t1, struct timeval t2) {
 
 int main()
 {
+    // Структуры хранят время
     struct timeval tv1;
     struct timeval tv2;
+
+    /*Ниже выполняются все команды, на каждой команде засекается время*/
 
     gettimeofday(&tv1, NULL);
     int fd = creat("1.txt", S_IWUSR);

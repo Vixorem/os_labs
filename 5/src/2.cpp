@@ -5,15 +5,18 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 
+// вычисляет разницу во времени
 unsigned long diff(struct timeval t1, struct timeval t2) {
     return t2.tv_sec * 1000000 + t2.tv_usec - t1.tv_sec * 1000000 - t1.tv_usec;
 }
 
 int main()
 {
+    // переменные для хранения времени
     struct timeval tv1;
     struct timeval tv2;
 
+    // проделываем все операции, засекая время
     gettimeofday(&tv1, NULL);
     int fd = creat("1.txt", S_IWUSR);
     for (int i = 0; i < 307200; ++i) {
