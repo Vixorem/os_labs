@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/Lab9_2.dir/src/main-race.c.o  -o Lab9_2 -lpthread 

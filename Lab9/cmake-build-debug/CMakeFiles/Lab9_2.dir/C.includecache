@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vctr/Рабочий стол/OS_Lab/Lab9/src/main-race.c
+stdio.h
+-
+mythreads.h
+/home/vctr/Рабочий стол/OS_Lab/Lab9/src/mythreads.h
+
+/home/vctr/Рабочий стол/OS_Lab/Lab9/src/mythreads.h
+pthread.h
+-
+assert.h
+-
+stdlib.h
+-
+sys/time.h
+-
+

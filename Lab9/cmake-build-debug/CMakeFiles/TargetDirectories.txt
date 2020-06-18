@@ -1,0 +1,7 @@
+/home/vctr/Рабочий стол/OS_Lab/Lab9/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vctr/Рабочий стол/OS_Lab/Lab9/cmake-build-debug/CMakeFiles/Lab9_3.dir
+/home/vctr/Рабочий стол/OS_Lab/Lab9/cmake-build-debug/CMakeFiles/Lab9_2.dir
+/home/vctr/Рабочий стол/OS_Lab/Lab9/cmake-build-debug/CMakeFiles/Lab9_5.dir
+/home/vctr/Рабочий стол/OS_Lab/Lab9/cmake-build-debug/CMakeFiles/Lab9_6.dir
+/home/vctr/Рабочий стол/OS_Lab/Lab9/cmake-build-debug/CMakeFiles/Lab9_8.dir
+/home/vctr/Рабочий стол/OS_Lab/Lab9/cmake-build-debug/CMakeFiles/edit_cache.dir
