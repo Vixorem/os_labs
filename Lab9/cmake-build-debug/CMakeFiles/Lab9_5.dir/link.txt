@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/Lab9_5.dir/src/main-deadlock-global.c.o  -o Lab9_5 -lpthread 

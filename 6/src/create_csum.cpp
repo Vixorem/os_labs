@@ -117,6 +117,6 @@ void check_csum(char *fileNameTest, char *fileNameCsum) {
 int main() {
     // Сравнение вычисленной суммы с искомой
     create_csum("../tests/3.txt", "../tests/sum1.txt");
-    check_csum("../tests/3.txt", "../tests/sum1.txt");
+    check_csum("../tests/3.txt", "../tests/testsum1.txt");
     return 0;
 }

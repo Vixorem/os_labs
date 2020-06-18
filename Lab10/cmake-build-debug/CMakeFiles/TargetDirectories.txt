@@ -1,0 +1,4 @@
+/home/vctr/Рабочий стол/OS_Lab/Lab10/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vctr/Рабочий стол/OS_Lab/Lab10/cmake-build-debug/CMakeFiles/read.dir
+/home/vctr/Рабочий стол/OS_Lab/Lab10/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vctr/Рабочий стол/OS_Lab/Lab10/cmake-build-debug/CMakeFiles/deleteLink.dir
