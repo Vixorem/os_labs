@@ -1,0 +1,1 @@
+/usr/bin/cc -g  -rdynamic CMakeFiles/lab13-queue-cond.dir/src/queue_cond.o CMakeFiles/lab13-queue-cond.dir/src/utils.o  -o lab13-queue-cond -lpthread 

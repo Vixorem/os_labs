@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vctr/Рабочий стол/OpSys/lab13/src/queue_mutex.c
+stdio.h
+-
+stdlib.h
+-
+assert.h
+-
+pthread.h
+-
+utils.h
+/home/vctr/Рабочий стол/OpSys/lab13/src/utils.h
+test.h
+/home/vctr/Рабочий стол/OpSys/lab13/src/test.h
+
+/home/vctr/Рабочий стол/OpSys/lab13/src/test.h
+unistd.h
+-
+
+/home/vctr/Рабочий стол/OpSys/lab13/src/utils.c
+stdio.h
+-
+stdlib.h
+-
+pthread.h
+-
+utils.h
+/home/vctr/Рабочий стол/OpSys/lab13/src/utils.h
+
+/home/vctr/Рабочий стол/OpSys/lab13/src/utils.h
+

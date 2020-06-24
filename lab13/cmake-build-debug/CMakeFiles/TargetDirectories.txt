@@ -1,0 +1,5 @@
+/home/vctr/Рабочий стол/OpSys/lab13/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vctr/Рабочий стол/OpSys/lab13/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vctr/Рабочий стол/OpSys/lab13/cmake-build-debug/CMakeFiles/lab13-queue-cond.dir
+/home/vctr/Рабочий стол/OpSys/lab13/cmake-build-debug/CMakeFiles/lab13-queue.dir
+/home/vctr/Рабочий стол/OpSys/lab13/cmake-build-debug/CMakeFiles/lab13-queue-mutex.dir
